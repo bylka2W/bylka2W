@@ -41,11 +41,11 @@ jobs:
                ICON=$TEXT
                BORDER=$TITLE;;
           esac
-          curl -o stats.svg "https://github-readme-stats-eight-theta.vercel.app/api?username=bylka2W&show_icons=true&bg_color=${{ env.BG }}&title_color=$TITLE&text_color=$TEXT&icon_color=$ICON&border_color=$BORDER&_=${{ github.run_id }}"
+          curl -o stats.svg "https://bylka2w-readme-statsvercelapp.vercel.app/api?username=bylka2W&show_icons=true&bg_color=${{ env.BG }}&title_color=$TITLE&text_color=$TEXT&icon_color=$ICON&border_color=$BORDER&_=${{ github.run_id }}"
           curl -o streak.svg "https://streak-stats.demolab.com/?user=bylka2W&background=${{ env.BG }}&ring=$TITLE&fire=$TITLE&currStreakLabel=$TITLE&currStreakNum=$TITLE&sideNums=$TEXT&sideLabels=$TEXT&dates=$TEXT&border=$BORDER&stroke=$BORDER&border_radius=${{ env.RADIUS }}&_=${{ github.run_id }}"
           curl -o graph.svg "https://github-readme-activity-graph.vercel.app/graph?username=bylka2W&bg_color=${{ env.BG }}&color=$TEXT&line=$TITLE&point=$TITLE&area_color=1b4332&area=true&hide_border=false&border_color=$BORDER&radius=${{ env.GRAPH_RADIUS }}&_=${{ github.run_id }}"
-          curl -o pin1.svg "https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=bylka2W&repo=B-Plus&show_owner=true&bg_color=${{ env.BG }}&title_color=$TITLE&text_color=$TEXT&icon_color=$ICON&border_color=$BORDER&_=${{ github.run_id }}"
-          curl -o pin2.svg "https://github-readme-stats-eight-theta.vercel.app/api/pin/?username=bylka2W&repo=TSS&show_owner=true&bg_color=${{ env.BG }}&title_color=$TITLE&text_color=$TEXT&icon_color=$ICON&border_color=$BORDER&_=${{ github.run_id }}"
+          curl -o pin1.svg "https://bylka2w-readme-statsvercelapp.vercel.app/api/pin/?username=bylka2W&repo=B-Plus&show_owner=true&bg_color=${{ env.BG }}&title_color=$TITLE&text_color=$TEXT&icon_color=$ICON&border_color=$BORDER&_=${{ github.run_id }}"
+          curl -o pin2.svg "https://bylka2w-readme-statsvercelapp.vercel.app/api/pin/?username=bylka2W&repo=TSS&show_owner=true&bg_color=${{ env.BG }}&title_color=$TITLE&text_color=$TEXT&icon_color=$ICON&border_color=$BORDER&_=${{ github.run_id }}"
           sed -i "s/rx=\"[^\"]*\"/rx=\"${{ env.RX }}\"/g" stats.svg pin1.svg pin2.svg graph.svg
           sed -i "s/stroke=\"#[^\"]*\"/stroke=\"#$BORDER\"/g" stats.svg pin1.svg pin2.svg graph.svg
 
