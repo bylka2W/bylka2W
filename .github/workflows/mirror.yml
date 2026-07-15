@@ -14,12 +14,12 @@ jobs:
 
       - name: Push to GitVerse
         run: |
-          git remote remove gitverse || true
-          git remote add gitverse https://${{ secrets.GITVERSE_USER }}:${{ secrets.GITVERSE_TOKEN }}@gitverse.ru/bylka2W/bylka2W.git
+          git remote add gitverse https://gitverse.ru/bylka2W/bylka2W.git || true
+          git config --global url."https://${{ secrets.GITVERSE_USER }}:${{ secrets.GITVERSE_TOKEN }}@gitverse.ru/".insteadOf "https://gitverse.ru/"
           git push gitverse main --force
 
       - name: Push to GitFlic
         run: |
-          git remote remove gitflic || true
-          git remote add gitflic https://${{ secrets.GITFLIC_USER }}:${{ secrets.GITFLIC_TOKEN }}@gitflic.ru/bylka2W/bylka2W.git
+          git remote add gitflic https://gitflic.ru/project/bylka2w/bylka2w.git || true
+          git config --global url."https://${{ secrets.GITFLIC_USER }}:${{ secrets.GITFLIC_TOKEN }}@gitflic.ru/".insteadOf "https://gitflic.ru/"
           git push gitflic main --force
