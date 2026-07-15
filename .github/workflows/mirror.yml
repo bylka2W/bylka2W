@@ -20,6 +20,7 @@ jobs:
 
       - name: Push to GitFlic
         run: |
-          git remote remove gitflic || true
-          git remote add gitflic https://${{ secrets.GITFLIC_USER }}:${{ secrets.GITFLIC_TOKEN }}@gitflic.ru/bylka2W/bylka2W.git
+          git remote add gitflic https://gitflic.ru/bylka2W/bylka2W.git || true
+          git config --global credential.helper store
+          echo "https://${{ secrets.GITFLIC_USER }}:${{ secrets.GITFLIC_TOKEN }}@gitflic.ru" > ~/.git-credentials
           git push gitflic main --force
