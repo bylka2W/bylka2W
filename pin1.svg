@@ -73,7 +73,7 @@
     
 
     <text class="description" x="25" y="-5">
-      <tspan dy="1.2em" x="25">State machine compiler (x64) &#8212;</tspan><tspan dy="1.2em" x="25">&#1082;&#1086;&#1084;&#1087;&#1080;&#1083;&#1103;&#1090;&#1086;&#1088;</tspan><tspan dy="1.2em" x="25">&#1082;&#1086;&#1085;&#1077;&#1095;&#1085;&#1099;&#1093;...</tspan>
+      <tspan dy="1.2em" x="25">B+ &#8212; compiled language with two domains: PLAN (state</tspan><tspan dy="1.2em" x="25">machines) and METAL (systems/GPU). Compiles .b+ directly to</tspan><tspan dy="1.2em" x="25">x64 Windows PE without external tools.</tspan>
     </text>
 
     <g transform="translate(0, 75)">
