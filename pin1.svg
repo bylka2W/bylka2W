@@ -79,8 +79,8 @@
     <g transform="translate(0, 75)">
       
     <g data-testid="primary-lang" transform="translate(30, 0)">
-      <circle data-testid="lang-color" cx="0" cy="-5" r="6" fill="#6E4C13" />
-      <text data-testid="lang-name" class="gray" x="15">Assembly</text>
+      <circle data-testid="lang-color" cx="0" cy="-5" r="6" fill="#ec915c" />
+      <text data-testid="lang-name" class="gray" x="15">Zig</text>
     </g>
     
 
