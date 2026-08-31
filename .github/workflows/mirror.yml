@@ -1,4 +1,4 @@
-name: Mirror to GitVerse and GitFlic
+name: Mirror to GitLab, GitVerse, GitFlic and Codeberg
 
 on:
   push:
@@ -11,6 +11,17 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Push to GitLab
+        continue-on-error: true
+        env:
+          GITLAB_USER: ${{ secrets.GITLAB_USER }}
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        run: |
+          git remote add gitlab https://${GITLAB_USER}:${GITLAB_TOKEN}@gitlab.com/bylka2W/bylka2W.git 2>/dev/null || \
+            git remote set-url gitlab https://${GITLAB_USER}:${GITLAB_TOKEN}@gitlab.com/bylka2W/bylka2W.git
+          git push gitlab main --force
+          git push gitlab --tags
 
       - name: Push to GitVerse
         continue-on-error: true
@@ -32,3 +43,14 @@ jobs:
             git remote set-url gitflic https://oauth2:${GITFLIC_TOKEN}@gitflic.ru/project/bylka2w/bylka2w.git
           git push gitflic main --force
           git push gitflic --tags
+
+      - name: Push to Codeberg
+        continue-on-error: true
+        env:
+          CODEBERG_USER: ${{ secrets.CODEBERG_USER }}
+          CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
+        run: |
+          git remote add codeberg https://${CODEBERG_USER}:${CODEBERG_TOKEN}@codeberg.org/bylka2W/bylka2W.git 2>/dev/null || \
+            git remote set-url codeberg https://${CODEBERG_USER}:${CODEBERG_TOKEN}@codeberg.org/bylka2W/bylka2W.git
+          git push codeberg main --force
+          git push codeberg --tags
