@@ -3,6 +3,9 @@ name: Mirror to GitLab, GitVerse, GitFlic and Codeberg
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "0 */2 * * *"
+  workflow_dispatch:
 
 jobs:
   mirror:
@@ -29,8 +32,8 @@ jobs:
           GITVERSE_USER: ${{ secrets.GITVERSE_USER }}
           GITVERSE_TOKEN: ${{ secrets.GITVERSE_TOKEN }}
         run: |
-          git remote add gitverse "https://${GITVERSE_USER}:${GITVERSE_TOKEN}@gitverse.ru/bylka2W/bylka2W.git" 2>/dev/null || true
-          git remote set-url gitverse "https://${GITVERSE_USER}:${GITVERSE_TOKEN}@gitverse.ru/bylka2W/bylka2W.git"
+          git remote add gitverse "https://${GITVERSE_USER}:${GITVERSE_TOKEN}@gitverse.ru/bylka2W/Test.git" 2>/dev/null || true
+          git remote set-url gitverse "https://${GITVERSE_USER}:${GITVERSE_TOKEN}@gitverse.ru/bylka2W/Test.git"
           git push gitverse main --force
           git push gitverse --tags
 
