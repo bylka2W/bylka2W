@@ -18,8 +18,8 @@ jobs:
           GITLAB_USER: ${{ secrets.GITLAB_USER }}
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
-          git remote add gitlab https://${GITLAB_USER}:${GITLAB_TOKEN}@gitlab.com/bylka2W/bylka2W.git 2>/dev/null || \
-            git remote set-url gitlab https://${GITLAB_USER}:${GITLAB_TOKEN}@gitlab.com/bylka2W/bylka2W.git
+          git remote add gitlab "https://${GITLAB_USER}:${GITLAB_TOKEN}@gitlab.com/bylka2W/bylka2W.git" 2>/dev/null || true
+          git remote set-url gitlab "https://${GITLAB_USER}:${GITLAB_TOKEN}@gitlab.com/bylka2W/bylka2W.git"
           git push gitlab main --force
           git push gitlab --tags
 
@@ -29,8 +29,8 @@ jobs:
           GITVERSE_USER: ${{ secrets.GITVERSE_USER }}
           GITVERSE_TOKEN: ${{ secrets.GITVERSE_TOKEN }}
         run: |
-          git remote add gitverse https://${GITVERSE_USER}:${GITVERSE_TOKEN}@gitverse.ru/bylka2W/bylka2W.git 2>/dev/null || \
-            git remote set-url gitverse https://${GITVERSE_USER}:${GITVERSE_TOKEN}@gitverse.ru/bylka2W/bylka2W.git
+          git remote add gitverse "https://${GITVERSE_USER}:${GITVERSE_TOKEN}@gitverse.ru/bylka2W/bylka2W.git" 2>/dev/null || true
+          git remote set-url gitverse "https://${GITVERSE_USER}:${GITVERSE_TOKEN}@gitverse.ru/bylka2W/bylka2W.git"
           git push gitverse main --force
           git push gitverse --tags
 
@@ -39,8 +39,8 @@ jobs:
         env:
           GITFLIC_TOKEN: ${{ secrets.GITFLIC_TOKEN }}
         run: |
-          git remote set-url gitflic https://oauth2:${GITFLIC_TOKEN}@gitflic.ru/project/bylka2w/bylka2w.git 2>/dev/null || \
-            git remote add gitflic https://oauth2:${GITFLIC_TOKEN}@gitflic.ru/project/bylka2w/bylka2w.git
+          git remote add gitflic "https://oauth2:${GITFLIC_TOKEN}@gitflic.ru/project/bylka2w/bylka2w.git" 2>/dev/null || true
+          git remote set-url gitflic "https://oauth2:${GITFLIC_TOKEN}@gitflic.ru/project/bylka2w/bylka2w.git"
           git push gitflic main --force
           git push gitflic --tags
 
@@ -50,7 +50,7 @@ jobs:
           CODEBERG_USER: ${{ secrets.CODEBERG_USER }}
           CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
         run: |
-          git remote add codeberg https://${CODEBERG_USER}:${CODEBERG_TOKEN}@codeberg.org/bylka2W/bylka2W.git 2>/dev/null || \
-            git remote set-url codeberg https://${CODEBERG_USER}:${CODEBERG_TOKEN}@codeberg.org/bylka2W/bylka2W.git
+          git remote add codeberg "https://${CODEBERG_USER}:${CODEBERG_TOKEN}@codeberg.org/bylka2W/bylka2W.git" 2>/dev/null || true
+          git remote set-url codeberg "https://${CODEBERG_USER}:${CODEBERG_TOKEN}@codeberg.org/bylka2W/bylka2W.git"
           git push codeberg main --force
           git push codeberg --tags
