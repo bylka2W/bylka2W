@@ -39,8 +39,8 @@ jobs:
         env:
           GITFLIC_TOKEN: ${{ secrets.GITFLIC_TOKEN }}
         run: |
-          git remote add gitflic https://oauth2:${GITFLIC_TOKEN}@gitflic.ru/project/bylka2w/bylka2w.git 2>/dev/null || \
-            git remote set-url gitflic https://oauth2:${GITFLIC_TOKEN}@gitflic.ru/project/bylka2w/bylka2w.git
+          git remote set-url gitflic https://oauth2:${GITFLIC_TOKEN}@gitflic.ru/project/bylka2w/bylka2w.git 2>/dev/null || \
+            git remote add gitflic https://oauth2:${GITFLIC_TOKEN}@gitflic.ru/project/bylka2w/bylka2w.git
           git push gitflic main --force
           git push gitflic --tags
 
